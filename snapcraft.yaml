@@ -1,0 +1,29 @@
+name: goaccess-cprov
+version: 1.2
+summary: Real-time web log analyzer and interactive viewer
+description: |
+  GoAccess is a real-time web log analyzer and interactive viewer that runs
+  in a terminal in *nix systems or through your browser.
+confinement: strict
+grade: devel
+
+apps:
+  goaccess:
+    command: bin/goaccess
+
+parts:
+  goaccess:
+    plugin: autotools
+    #source: https://github.com/allinurl/goaccess.git
+    source: http://tar.goaccess.io/goaccess-1.2.tar.gz
+    configflags:
+      - --enable-utf8
+      - --enable-geoip=legacy
+    build-packages:
+      - gettext
+      - libncurses-dev
+      - libncursesw5-dev
+      - libglib2.0-dev
+      - libgeoip-dev
+    stage-packages:
+      - libgeoip-dev
