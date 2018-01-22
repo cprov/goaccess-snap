@@ -18,12 +18,12 @@ parts:
     source: http://tar.goaccess.io/goaccess-1.2.tar.gz
     configflags:
       - --enable-utf8
-      - --enable-geoip=legacy
+    #  - --enable-geoip=legacy
     build-packages:
       - gettext
       - libncurses-dev
       - libncursesw5-dev
       - libglib2.0-dev
-      - libgeoip-dev
-    stage-packages:
-      - libgeoip-dev
+    #  - libgeoip-dev
+    #stage-packages:
+    #  - libgeoip-dev
