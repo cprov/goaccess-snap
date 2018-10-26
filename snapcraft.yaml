@@ -1,5 +1,5 @@
 name: goaccess-cprov
-version: 1.2
+version: git
 summary: Real-time web log analyzer and interactive viewer
 description: |
   GoAccess is a real-time web log analyzer and interactive viewer that runs
@@ -14,16 +14,15 @@ apps:
 parts:
   goaccess:
     plugin: autotools
-    #source: https://github.com/allinurl/goaccess.git
-    source: http://tar.goaccess.io/goaccess-1.2.tar.gz
+    source: https://github.com/allinurl/goaccess.git
     configflags:
       - --enable-utf8
-    #  - --enable-geoip=legacy
+      - --enable-geoip=legacy
     build-packages:
       - gettext
       - libncurses-dev
       - libncursesw5-dev
       - libglib2.0-dev
-    #  - libgeoip-dev
-    #stage-packages:
-    #  - libgeoip-dev
+      - libgeoip-dev
+    stage-packages:
+      - libgeoip-dev
