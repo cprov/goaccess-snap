@@ -1,11 +1,10 @@
 name: goaccess-cprov
-version: git
+adopt-info: goaccess
 summary: Real-time web log analyzer and interactive viewer
 description: |
   GoAccess is a real-time web log analyzer and interactive viewer that runs
   in a terminal in *nix systems or through your browser.
 confinement: classic
-grade: devel
 
 apps:
   goaccess:
@@ -26,3 +25,7 @@ parts:
       - libgeoip-dev
     stage-packages:
       - libgeoip-dev
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe)"
+      snapcraftctl set-grade "devel"
